@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Chatbot</title>
+</head>
+
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      Chatbot
+    </div>
+    <div class="chat-box" id="chat-box">
+      <div class="chat-message bot-message">
+        Hello! How can I assist you today?
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .chat-container {
+      max-width: 1300px;
+    
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    .chat-box {
+      height: 400px;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+
+    .chat-message {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .bot-message {
+      background-color: #007BFF;
+      color: white;
+      text-align: left;
+    }
+
+    .user-message {
+      background-color: #f0f0f0;
+      text-align: right;
+    }
+
+    .chat-input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #send-button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .button {
+      backface-visibility: hidden;
+      background: #22e209;
+      border: 0;
+      border-radius: .375rem;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Circular,Helvetica,sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.3;
+      padding: 1rem 1.25rem;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transform: translateZ(0) scale(1);
+      transition: transform .2s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      margin: 6%;
+    }
+
+    .button:disabled {
+      color: #787878;
+      cursor: auto;
+    }
+
+    .button:not(:disabled):hover {
+      transform: scale(1.05);
+    }
+
+    .button:not(:disabled):hover:active {
+      transform: scale(1.05) translateY(.125rem);
+    }
+
+    .button:focus {
+      outline: 0 solid transparent;
+    }
+
+    .button:focus:before {
+      border-width: .125rem;
+      content: "";
+      left: calc(-1*.375rem);
+      pointer-events: none;
+      position: absolute;
+      top: calc(-1*.375rem);
+      transition: border-radius;
+      -webkit-user-select: none;
+      margin: 6;
+    }
+
+    .button:focus:not(:focus-visible) {
+      outline: 0 solid transparent;
+    }
+
+    .button:not(:disabled):active {
+      transform: translateY(.125rem);
+    }
+    .button {
+      background-color: #007BFF;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const chatBox = document.getElementById("chat-box");
+      const userInput = document.getElementById("user-input");
+      const sendButton = document.getElementById("send-button");
+
+      sendButton.addEventListener("click", function () {
+        const userMessage = userInput.value.trim();
+        if (userMessage !== "") {
+          displayMessage(userMessage, "user-message");
+          userInput.value = "";
+          setTimeout(() => {
+            handleResponse(userMessage);
+          }, 1000);
+        }
+      });
+
+      function displayMessage(message, className) {
+        const messageElement = document.createElement("div");
+        messageElement.textContent = message;
+        messageElement.classList.add("chat-message", className);
+        chatBox.appendChild(messageElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+      
+
+      function handleResponse(userMessage) {
+        const botResponses = {
+          "hello": "Hi there! How can I help you?",
+          "hey": "Hi there! How can I help you?",
+          "hiii": "Hi there! How can I help you?",
+          "start": "I'm just a chatbot, but I'm here to assist you.",
+          "strat": "I'm just a chatbot, but I'm here to assist you.",
+          "student": "class 10 after filde",
+          "class 10": "science , commerce, arts, dipaloma",
+          "class X": "science , commerce, arts, dipaloma",
+          "science": "scroll down and link .",
+          "scinece": "scroll down and link .",
+          "commecer": "scroll down and link .",
+          "commerce": "scroll down and link .",
+          "Arts": "scroll down and link .",
+          "arts": "scroll down and link .",
+          "diploma": "scroll down and link .",
+          "dipaloma": "scroll down and link .",
+          "bye": "Goodbye! Feel free to come back if you have more questions.",
+          "exit": "Goodbye! Feel free to come back if you have more questions."
+        };
+
+        const normalizedUserMessage = userMessage.toLowerCase();
+        const botResponse = botResponses[normalizedUserMessage] || "I'm sorry, I didn't understand that.";
+        displayMessage(botResponse, "bot-message");
+      }
+    });
+
+
+  </script>
+ <a href="afterstu10sci.html"><button class="button" role="button"  >science</button> </a>
+ <a href="stu10commerce.html"> <button class="button" role="button" >commerce</button> </a>
+ <a href="stu10afterArts.html"><button class="button" role="button">Arts</button> </a>
+<a href="diploma list.pdf"><button class="button" role="button" >diploma</button> </a>
+
+</body>
+
+
+
+</html>

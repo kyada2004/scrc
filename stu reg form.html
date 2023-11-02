@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>student registration page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      form {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      legend {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="conncent.php" method="POST">
+        <legend>Registration Form</legend>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Your name.."
+        />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Your password.."
+        />
+
+        <label for="gmailid">Gmail ID</label>
+        <input
+          type="email"
+          id="gmailid"
+          name="gmailid"
+          placeholder="Your email.."
+        />
+
+        <label for="phone no">Phone Number</label>
+        <input
+          type="tel"
+          id="phone no"
+          name="phoneno"
+          placeholder="Your phone number.."
+        />
+
+        <label for="course">Course</label>
+        <input
+          type="text"
+          id="course"
+          name="course"
+          placeholder="Your course.."
+        />
+
+        <input type="submit" name="Submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
+
+</rewritten_selection_following_instructions>
